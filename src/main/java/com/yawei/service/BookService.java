@@ -6,6 +6,8 @@ import com.yawei.dao.PublisherDao;
 import com.yawei.pojo.Book;
 import com.yawei.pojo.BookType;
 import com.yawei.pojo.Publisher;
+import com.yawei.util.Page;
+import com.yawei.util.SearchParam;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.inject.Inject;
@@ -23,26 +25,31 @@ public class BookService {
     private PublisherDao publisherDao;
 
     public void saveBook(Book book){
-        bookDao.saveBook(book);
+        bookDao.save(book);
     }
 
     public void delBook(Integer id){
-        bookDao.delBookById(id);
+        bookDao.delete(id);
     }
 
     public List<Book> findAllBook(){
-        return bookDao.findAllBook();
+        return bookDao.findAll();
     }
 
     public Book findBookById(Integer id){
-        return bookDao.findById(id);
+       return bookDao.findById(id);
     }
 
     public List<BookType> findAllBookType(){
-        return bookTypeDao.findAllBookType();
+        return bookTypeDao.findAll();
     }
 
     public List<Publisher> findAllPublisher(){
-        return publisherDao.findAllPublisher();
+        return publisherDao.findAll();
     }
+
+    public Page<Book> findByPage(Integer pageNo, List<SearchParam> searchParamList){
+        return bookDao.findByPageNo(pageNo,5,searchParamList);
+    }
+
 }

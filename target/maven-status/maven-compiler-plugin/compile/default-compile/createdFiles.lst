@@ -1,8 +1,12 @@
 com\yawei\service\BookService.class
-com\yawei\pojo\Publisher.class
 com\yawei\dao\PublisherDao.class
 com\yawei\dao\BookDao.class
-com\yawei\pojo\Book.class
+com\yawei\util\Page.class
+com\yawei\dao\BaseDao.class
 com\yawei\pojo\BookType.class
-com\yawei\controller\BookController.class
 com\yawei\dao\BookTypeDao.class
+com\yawei\pojo\Publisher.class
+com\yawei\pojo\Book.class
+com\yawei\controller\BookController.class
+com\yawei\util\SearchParam.class
+com\yawei\util\Strings.class
